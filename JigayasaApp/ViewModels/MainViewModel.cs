@@ -59,7 +59,7 @@ namespace JigayasaApp.ViewModels
         }
         private QueryConfig _myItem;
 
-        /////////////////////////////////public properties by Avnish's property generator utility////////////////////////
+
 
         public QueryConfig MyItem
         {
