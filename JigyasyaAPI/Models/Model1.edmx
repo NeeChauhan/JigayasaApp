@@ -1,0 +1,262 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="GI365_JMSCoreV3Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ActionConfigs">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Created" Type="datetimeoffset" Precision="7" Nullable="false" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="255" />
+          <Property Name="Modified" Type="datetimeoffset" Precision="7" />
+          <Property Name="ModifiedBy" Type="nvarchar" MaxLength="255" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="HomeMode" Type="int" Nullable="false" />
+          <Property Name="ControlType" Type="int" Nullable="false" />
+          <Property Name="CenterDescription" Type="nvarchar(max)" />
+          <Property Name="TopLeftDescription" Type="nvarchar(max)" />
+          <Property Name="TopRightDescription" Type="nvarchar(max)" />
+          <Property Name="BottomLeftDescription" Type="nvarchar(max)" />
+          <Property Name="BottomRightDescription" Type="nvarchar(max)" />
+          <Property Name="SymbolIcon" Type="nvarchar(max)" />
+          <Property Name="Custom1" Type="nvarchar(max)" />
+          <Property Name="Custom2" Type="nvarchar(max)" />
+          <Property Name="Custom3" Type="nvarchar(max)" />
+          <Property Name="Custom4" Type="nvarchar(max)" />
+          <Property Name="Custom5" Type="nvarchar(max)" />
+          <Property Name="IsEnable" Type="bit" />
+          <Property Name="IsVisible" Type="bit" />
+        </EntityType>
+        <EntityType Name="QueryConfigs">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="uniqueidentifier" Nullable="false" />
+          <Property Name="Created" Type="datetimeoffset" Precision="7" Nullable="false" />
+          <Property Name="CreatedBy" Type="nvarchar" MaxLength="255" />
+          <Property Name="Modified" Type="datetimeoffset" Precision="7" />
+          <Property Name="ModifiedBy" Type="nvarchar" MaxLength="255" />
+          <Property Name="IsActive" Type="bit" Nullable="false" />
+          <Property Name="HomeMode" Type="int" Nullable="false" />
+          <Property Name="OrderNum" Type="int" Nullable="false" />
+          <Property Name="Enabled" Type="bit" Nullable="false" />
+          <Property Name="AllowPrint" Type="bit" Nullable="false" />
+          <Property Name="AllowSearch" Type="bit" Nullable="false" />
+          <Property Name="UserAssignable" Type="bit" Nullable="false" />
+          <Property Name="RoleAssignable" Type="bit" Nullable="false" />
+          <Property Name="StatsName" Type="nvarchar(max)" Nullable="false" />
+          <Property Name="Description" Type="nvarchar" MaxLength="250" />
+          <Property Name="StatsCode" Type="nvarchar" MaxLength="50" />
+          <Property Name="QueryTable" Type="varchar" MaxLength="255" />
+          <Property Name="ReturnType" Type="nvarchar" MaxLength="50" />
+          <Property Name="FilterString" Type="nvarchar(max)" />
+          <Property Name="ExpandString" Type="nvarchar(max)" />
+          <Property Name="QueryCount" Type="int" />
+          <Property Name="QueryResults" Type="nvarchar(max)" />
+          <Property Name="LastQueryUpdate" Type="datetimeoffset" Precision="7" />
+          <Property Name="RowOrder" Type="int" Nullable="false" />
+          <Property Name="CenterDescription" Type="nvarchar(max)" />
+          <Property Name="TopLeftDescription" Type="nvarchar(max)" />
+          <Property Name="TopRightDescription" Type="nvarchar(max)" />
+          <Property Name="BottomLeftDescription" Type="nvarchar(max)" />
+          <Property Name="BottomRightDescription" Type="nvarchar(max)" />
+          <Property Name="SymbolIcon" Type="nvarchar(max)" />
+          <Property Name="Custom1" Type="nvarchar(max)" />
+          <Property Name="Custom2" Type="nvarchar(max)" />
+          <Property Name="Custom3" Type="nvarchar(max)" />
+          <Property Name="Custom4" Type="nvarchar(max)" />
+          <Property Name="Custom5" Type="nvarchar(max)" />
+          <Property Name="ButtonDataTemplate" Type="nvarchar(max)" />
+          <Property Name="ButtonRowSpan" Type="int" />
+          <Property Name="ButtonColoumnSpan" Type="int" />
+          <Property Name="DataTemplate" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityContainer Name="GI365_JMSCoreV3ModelStoreContainer">
+          <EntitySet Name="ActionConfigs" EntityType="Self.ActionConfigs" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="QueryConfigs" EntityType="Self.QueryConfigs" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="GI365_JMSCoreV3Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ActionConfig">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="Created" Type="DateTimeOffset" Nullable="false" Precision="7" />
+          <Property Name="CreatedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Modified" Type="DateTimeOffset" Precision="7" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="HomeMode" Type="Int32" Nullable="false" />
+          <Property Name="ControlType" Type="Int32" Nullable="false" />
+          <Property Name="CenterDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TopLeftDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TopRightDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BottomLeftDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BottomRightDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SymbolIcon" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Custom1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Custom2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Custom3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Custom4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Custom5" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsEnable" Type="Boolean" />
+          <Property Name="IsVisible" Type="Boolean" />
+        </EntityType>
+        <EntityType Name="QueryConfig">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Guid" Nullable="false" />
+          <Property Name="Created" Type="DateTimeOffset" Nullable="false" Precision="7" />
+          <Property Name="CreatedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Modified" Type="DateTimeOffset" Precision="7" />
+          <Property Name="ModifiedBy" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="IsActive" Type="Boolean" Nullable="false" />
+          <Property Name="HomeMode" Type="Int32" Nullable="false" />
+          <Property Name="OrderNum" Type="Int32" Nullable="false" />
+          <Property Name="Enabled" Type="Boolean" Nullable="false" />
+          <Property Name="AllowPrint" Type="Boolean" Nullable="false" />
+          <Property Name="AllowSearch" Type="Boolean" Nullable="false" />
+          <Property Name="UserAssignable" Type="Boolean" Nullable="false" />
+          <Property Name="RoleAssignable" Type="Boolean" Nullable="false" />
+          <Property Name="StatsName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Description" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="StatsCode" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="QueryTable" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ReturnType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FilterString" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ExpandString" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="QueryCount" Type="Int32" />
+          <Property Name="QueryResults" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LastQueryUpdate" Type="DateTimeOffset" Precision="7" />
+          <Property Name="RowOrder" Type="Int32" Nullable="false" />
+          <Property Name="CenterDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TopLeftDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="TopRightDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BottomLeftDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BottomRightDescription" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="SymbolIcon" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Custom1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Custom2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Custom3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Custom4" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Custom5" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ButtonDataTemplate" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ButtonRowSpan" Type="Int32" />
+          <Property Name="ButtonColoumnSpan" Type="Int32" />
+          <Property Name="DataTemplate" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="GI365_JMSCoreV3Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ActionConfigs" EntityType="Self.ActionConfig" />
+          <EntitySet Name="QueryConfigs" EntityType="Self.QueryConfig" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="GI365_JMSCoreV3ModelStoreContainer" CdmEntityContainer="GI365_JMSCoreV3Entities">
+          <EntitySetMapping Name="ActionConfigs">
+            <EntityTypeMapping TypeName="GI365_JMSCoreV3Model.ActionConfig">
+              <MappingFragment StoreEntitySet="ActionConfigs">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Modified" ColumnName="Modified" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="HomeMode" ColumnName="HomeMode" />
+                <ScalarProperty Name="ControlType" ColumnName="ControlType" />
+                <ScalarProperty Name="CenterDescription" ColumnName="CenterDescription" />
+                <ScalarProperty Name="TopLeftDescription" ColumnName="TopLeftDescription" />
+                <ScalarProperty Name="TopRightDescription" ColumnName="TopRightDescription" />
+                <ScalarProperty Name="BottomLeftDescription" ColumnName="BottomLeftDescription" />
+                <ScalarProperty Name="BottomRightDescription" ColumnName="BottomRightDescription" />
+                <ScalarProperty Name="SymbolIcon" ColumnName="SymbolIcon" />
+                <ScalarProperty Name="Custom1" ColumnName="Custom1" />
+                <ScalarProperty Name="Custom2" ColumnName="Custom2" />
+                <ScalarProperty Name="Custom3" ColumnName="Custom3" />
+                <ScalarProperty Name="Custom4" ColumnName="Custom4" />
+                <ScalarProperty Name="Custom5" ColumnName="Custom5" />
+                <ScalarProperty Name="IsEnable" ColumnName="IsEnable" />
+                <ScalarProperty Name="IsVisible" ColumnName="IsVisible" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="QueryConfigs">
+            <EntityTypeMapping TypeName="GI365_JMSCoreV3Model.QueryConfig">
+              <MappingFragment StoreEntitySet="QueryConfigs">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Created" ColumnName="Created" />
+                <ScalarProperty Name="CreatedBy" ColumnName="CreatedBy" />
+                <ScalarProperty Name="Modified" ColumnName="Modified" />
+                <ScalarProperty Name="ModifiedBy" ColumnName="ModifiedBy" />
+                <ScalarProperty Name="IsActive" ColumnName="IsActive" />
+                <ScalarProperty Name="HomeMode" ColumnName="HomeMode" />
+                <ScalarProperty Name="OrderNum" ColumnName="OrderNum" />
+                <ScalarProperty Name="Enabled" ColumnName="Enabled" />
+                <ScalarProperty Name="AllowPrint" ColumnName="AllowPrint" />
+                <ScalarProperty Name="AllowSearch" ColumnName="AllowSearch" />
+                <ScalarProperty Name="UserAssignable" ColumnName="UserAssignable" />
+                <ScalarProperty Name="RoleAssignable" ColumnName="RoleAssignable" />
+                <ScalarProperty Name="StatsName" ColumnName="StatsName" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="StatsCode" ColumnName="StatsCode" />
+                <ScalarProperty Name="QueryTable" ColumnName="QueryTable" />
+                <ScalarProperty Name="ReturnType" ColumnName="ReturnType" />
+                <ScalarProperty Name="FilterString" ColumnName="FilterString" />
+                <ScalarProperty Name="ExpandString" ColumnName="ExpandString" />
+                <ScalarProperty Name="QueryCount" ColumnName="QueryCount" />
+                <ScalarProperty Name="QueryResults" ColumnName="QueryResults" />
+                <ScalarProperty Name="LastQueryUpdate" ColumnName="LastQueryUpdate" />
+                <ScalarProperty Name="RowOrder" ColumnName="RowOrder" />
+                <ScalarProperty Name="CenterDescription" ColumnName="CenterDescription" />
+                <ScalarProperty Name="TopLeftDescription" ColumnName="TopLeftDescription" />
+                <ScalarProperty Name="TopRightDescription" ColumnName="TopRightDescription" />
+                <ScalarProperty Name="BottomLeftDescription" ColumnName="BottomLeftDescription" />
+                <ScalarProperty Name="BottomRightDescription" ColumnName="BottomRightDescription" />
+                <ScalarProperty Name="SymbolIcon" ColumnName="SymbolIcon" />
+                <ScalarProperty Name="Custom1" ColumnName="Custom1" />
+                <ScalarProperty Name="Custom2" ColumnName="Custom2" />
+                <ScalarProperty Name="Custom3" ColumnName="Custom3" />
+                <ScalarProperty Name="Custom4" ColumnName="Custom4" />
+                <ScalarProperty Name="Custom5" ColumnName="Custom5" />
+                <ScalarProperty Name="ButtonDataTemplate" ColumnName="ButtonDataTemplate" />
+                <ScalarProperty Name="ButtonRowSpan" ColumnName="ButtonRowSpan" />
+                <ScalarProperty Name="ButtonColoumnSpan" ColumnName="ButtonColoumnSpan" />
+                <ScalarProperty Name="DataTemplate" ColumnName="DataTemplate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

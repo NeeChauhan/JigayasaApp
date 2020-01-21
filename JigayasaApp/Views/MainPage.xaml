@@ -1,0 +1,26 @@
+﻿<Page
+    x:Class="JigayasaApp.Views.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="using:JigayasaApp"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:vm="using:JigayasaApp.ViewModels"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    DataContext="{Binding Maivm}"
+    mc:Ignorable="d">
+
+    <StackPanel>
+        <TextBox Text="{Binding Welcome, Mode=TwoWay}" />
+        <TextBlock Text="{Binding Mylabel}" />
+        <Button Command="{Binding Mycommand}" />
+        <ListView
+            Width="600"
+            Height="400"
+            ItemsSource="{Binding MyList}"
+            SelectedItem="{Binding MyItem, Mode=TwoWay}" />
+        <TextBlock Text="{Binding MyItem.Id}" />
+        <TextBlock Text="{Binding MyItem.StatsName}" />
+        <TextBlock Text="{Binding MyItem.StatsCode}" />
+    </StackPanel>
+</Page>
